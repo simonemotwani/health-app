@@ -1,69 +1,94 @@
-# React + TypeScript + Vite
+# Patient Profile UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Patient Profile interface built as part of a front-end assessment. This project demonstrates component structure, layout fidelity, and styling accuracy based on the provided Figma design.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework:** React with TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Routing:** React Router DOM
+- **Icons:** Custom SVG components
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+health-app/
+├── node_modules/
+├── public/
+│   └── images/
+│       ├── Background.png
+│       ├── Range of Motion Restoration 1.png
+│       └── vite.svg
+├── src/
+│   ├── components/
+│   │   ├── BackgroundVectors.tsx
+│   │   ├── FloatingActionButton.tsx
+│   │   ├── Header.tsx
+│   │   ├── HEPSummary.tsx
+│   │   ├── Layout.tsx
+│   │   ├── PatientEducation.tsx
+│   │   ├── PatientProfile.tsx
+│   │   ├── Sidebar.tsx
+│   │   └── StatPanel.tsx
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── tailwind.config.js
+├── text
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Setup Instructions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+- Node.js 
+- npm package manager
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd health-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm start 
+   ```
+
+4. **Open your browser**
+   - Navigate to `http://localhost:5173`
+
+
+## 🗺 Routing
+
+- **Route:** `/patients/:id` → Renders the complete Patient Profile UI
+- **Default redirect:** `/` → Redirects to `/patients/1`
+
+## 🎨 Design Reference
+
+The UI closely follows the provided Figma design specifications:
+- Exact spacing and typography measurements
+- Consistent color palette and visual hierarchy  
+- Proper component proportions and layouts
+
+
